@@ -52,6 +52,15 @@ module Hangman
           @intentos -= 1
         end
         
+        puts "Desea salvar el juego? "
+        res = gets.chomp
+        if res == "s"
+          p = Archivo.new
+          p.serializa_archivo(tablero, palabra)
+          puts "Partida salvada"
+          break
+        end
+
         puts msg_game_over
 
       end         
